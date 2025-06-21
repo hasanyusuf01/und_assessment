@@ -1,4 +1,6 @@
 
+![image](https://github.com/user-attachments/assets/f248cffb-44e3-4ac3-a0ee-a76fd4cd34c9)
+
 
 The Training System serves as the central orchestration layer for the DDPG reinforcement learning pipeline. It manages the complete training lifecycle from initialization through episode execution, experience collection, network updates, and performance evaluation. The system is implemented primarily through the Trainer class which coordinates interactions between the DDPG agent, environment, replay buffer, and logging subsystems.
 
@@ -98,7 +100,7 @@ The Episode Logging System captures high-level performance metrics for each comp
 - Episode rewards and completion status
 - Goal achievement tracking
 - Episode length statistics
-- 
+
 #### Step-Level Logging (csv2.csv)
 
 - Detailed state observations per step
