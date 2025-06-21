@@ -4,7 +4,7 @@
 # Purpose and Scope
 The Training System serves as the central orchestration layer for the DDPG reinforcement learning pipeline. It manages the complete training lifecycle from initialization through episode execution, experience collection, network updates, and performance evaluation. The system is implemented primarily through the Trainer class which coordinates interactions between the DDPG agent, environment, replay buffer, and logging subsystems.
 
-For detailed information about the DDPG algorithm components themselves, see DDPG Algorithm Implementation. For environment-specific details, see Point Particle Environment. For data analysis capabilities, see Data Analysis and Visualization.
+![image](https://github.com/user-attachments/assets/7ff95c8e-2f63-4310-b5fb-c91d4d08f0f5)
 
 
 # Point Particle Environment
@@ -53,22 +53,23 @@ The PointParticleEnv class implements the OpenAI Gym interface and provides a co
 The environment state consists of the agent's position and orientation:
 
 ![image](https://github.com/user-attachments/assets/9613744a-bb76-4fb5-848d-816fbaa57341)
+
 The state space is configured during initialization based on the obs parameter:
 
 - Basic state (obs=False): 3D vector [x, y, heading]
 - Extended state (obs=True): Includes flattened obstacle coordinates
 Observation Space Bounds:
 
--Position: [0, 0] to [size_x, size_y] (default: [50, 50])
--Heading: 0 to 360 degrees
--Obstacles: Flattened coordinates when obs=True
+- Position: [0, 0] to [size_x, size_y] (default: [50, 50])
+- Heading: 0 to 360 degrees
+- Obstacles: Flattened coordinates when obs=True
 
-##Action Space
+## Action Space
 The action space is continuous and one-dimensional, representing the desired heading angle:
 ![image](https://github.com/user-attachments/assets/825e4326-1fd7-468a-b596-437be56dca5a)
 The action is smoothed using exponential averaging to prevent abrupt heading changes, promoting smoother trajectories.
 
-##Reward System
+## Reward System
 The environment implements a sophisticated multi-component reward system designed to guide the agent toward efficient goal-reaching behavior:
 
 ### Components
