@@ -122,6 +122,45 @@ The episode logs reveal distinct phases in the learning progression:
 
 ![image](https://github.com/user-attachments/assets/5df7d0d6-d98d-4e8e-b671-1ac4c37797d3)
 
+---
 
+# Configuration System
+The configuration system consists of JSON files located in the DDPG-Pytorch/configs/ directory. Each configuration file defines a complete set of hyperparameters for training a DDPG agent on a specific environment.
+### JSON Configuration Schema
+
+Each configuration file follows a consistent schema with the following parameters:
+
+| Parameter          | Type    | Purpose                                           | Used By                     |
+|--------------------|---------|---------------------------------------------------|-----------------------------|
+| `env_name`         | String  | Environment identifier                            | Trainer initialization      |
+| `seed`             | Integer | Random seed for reproducibility                   | Environment and agent seeding|
+| `discount`         | Float   | Reward discount factor (γ)                        | DDPGAgent training          |
+| `tau`              | Float   | Soft update parameter for target networks         | DDPGAgent network updates    |
+| `time_steps`       | Integer | Total training steps                              | Training loop termination    |
+| `start_time_step`  | Integer | Steps before training begins                      | Exploration phase control    |
+| `expl_noise`       | Float   | Exploration noise standard deviation              | Action selection noise       |
+| `batch_size`       | Integer | Training batch size                               | ReplayBuffer sampling        |
+| `evaluate_frequency`| Integer | Evaluation interval in steps                      | Policy evaluation scheduling  |
+
+---
+
+### Development Dependencies
+
+The system requires several Python packages across different functional areas:
+
+| Category                | Dependencies              | Usage                          |
+|------------------------|---------------------------|--------------------------------|
+| Deep Learning          | `torch`, `torchvision`    | Neural network implementation   |
+| Scientific Computing    | `numpy`, `scipy`         | Mathematical operations         |
+| Visualization          | `matplotlib`, `pygame`    | Plotting and environment rendering |
+ Data Management        | `pandas`                  | Log file processing            |
+| Experiment Tracking    | `wandb`                   | Remote experiment monitoring    |
+| Environment            | `gym`                     | Reinforcement learning interface |
+
+
+
+## Training Loop Data Flow
+
+![image](https://github.com/user-attachments/assets/802fb04c-2879-41bd-8f93-b7043779e58d)
 
 
