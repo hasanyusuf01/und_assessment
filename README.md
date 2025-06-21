@@ -1,7 +1,6 @@
 # und_assessment
 
 
-# Purpose and Scope
 The Training System serves as the central orchestration layer for the DDPG reinforcement learning pipeline. It manages the complete training lifecycle from initialization through episode execution, experience collection, network updates, and performance evaluation. The system is implemented primarily through the Trainer class which coordinates interactions between the DDPG agent, environment, replay buffer, and logging subsystems.
 
 ![image](https://github.com/user-attachments/assets/7ff95c8e-2f63-4310-b5fb-c91d4d08f0f5)
