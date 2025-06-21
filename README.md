@@ -35,11 +35,21 @@ Predefined rectangular obstacles: `[(12, 12, 25, 15), (25, 25, 27, 37)]`
 Format: `(x1, y1, x2, y2)` representing rectangle corners  
 Can be modified by editing the `obstacles` list in initialization.
 
-
-
-# Core Training Architecture
-The Training System follows a centralized orchestration pattern where the Trainer class acts as the primary coordinator for all training activities.
 ## Environment Architecture
 The PointParticleEnv class implements the OpenAI Gym interface and provides a complete 2D navigation simulation with the following key components:
+
+| Component            | Purpose                                          | Key Methods                          |
+|----------------------|--------------------------------------------------|--------------------------------------|
+| State Management      | Track agent position heading                 | `reset()`, `step()`                  |
+| Physics Simulation    | Move agent and detect collisions                 | `_simulate_step()`, collision detection |
+| Reward System         | Multi-component reward calculation               | `compute_reward()`, distance functions |
+| Rendering             | Visual display with Pygame                       | `render()`, `close()`                |
+
+##State and Action Spaces
+###State Space
+The environment state consists of the agent's position and orientation:
+
+![image](https://github.com/user-attachments/assets/9613744a-bb76-4fb5-848d-816fbaa57341)
+
 
 
