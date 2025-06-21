@@ -91,3 +91,37 @@ The environment implements a sophisticated multi-component reward system designe
 
 
 
+
+## Results Analysis
+
+The Episode Logging System captures high-level performance metrics for each complete training episode in the DDPG reinforcement learning system. This system records episode-level aggregated data including total rewards, completion status, and termination reasons to enable training progress analysis and performance evaluation.
+#### Episode-Level Logging (csv1.csv)
+
+- Episode rewards and completion status
+- Goal achievement tracking
+- Episode length statistics
+- 
+#### Step-Level Logging (csv2.csv)
+
+- Detailed state observations per step
+- Immediate reward values
+- Complete trajectory information
+
+The episode logs reveal distinct phases in the learning progression:
+
+- **Exploration**: Initial phase where the model is trying to understand the environment, leading to negative rewards and a low success rate.
+- **Breakthrough**: A transitional phase where the model starts to show improvement, with variable rewards and a moderate success rate.
+- **Convergence**: Final phase where the model has learned effectively, achieving high rewards and a 100% success rate.
+
+
+| Phase        | Episode Range | Avg Reward | Success Rate | Avg Steps |
+|--------------|---------------|------------|--------------|-----------|
+| Exploration  | 1-83          | -25,000    | 0%           | 300       |
+| Breakthrough | 84-86         | Variable   | 67%          | 150       |
+| Convergence  | 87+           | +300       | 100%         | 50        |
+
+![image](https://github.com/user-attachments/assets/5df7d0d6-d98d-4e8e-b671-1ac4c37797d3)
+
+
+
+
